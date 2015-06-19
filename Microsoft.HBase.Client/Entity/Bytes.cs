@@ -177,8 +177,8 @@ namespace Microsoft.HBase.Client.Entity
 
         public static byte[] ToBytes(string s)
         {
-            if (string.IsNullOrEmpty(s))
-                return null;
+            if (s == null) return null;
+            if (s == "") return new byte[0];
 
             return Encoding.UTF8.GetBytes(s);
         }
